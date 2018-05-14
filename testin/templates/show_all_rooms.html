@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>choose category that sort</p>
+<form action="/sort/" method = "post">
+    {% csrf_token %}
+<select id="engine" name="engine">
+  <option value="area">area</option>
+  <option value="room">room</option>
+  <option value="coins">coins</option>
+  <option value="rent_buy">rent_buy</option>
+  <option value="day_rent">rent_day</option>
+</select>
+    <input type="submit">
+</form>
+<p><a href="/add_apart/">add my apartament</a></p>
+<p><a href = "/search/">searh apartament</a></p>
+{% for room in rooms %}
+    <p>{{ room.area }}-area</p>
+    <p>{{ room.room }}-room</p>
+    <p>{{ room.coins }}-prise</p>
+    <p>{{ room.rent_buy }}-rent</p>
+    <p>{{ room.day_rent }}-day rent</p>
+    <p>{{ room.comment }}</p>
+    <p><a href="/all/delete/{{ room.id }}">delete</a></p>
+    <hr>
+{% endfor %}
+</body>
+</html>

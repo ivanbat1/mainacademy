@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p><a href = '/all/'>home page</a></p>
+<form action="/result/" method="post">
+    {% csrf_token %}
+    <p>choose category</p><select id="engine" name="engine">
+          <option value="area">area</option>
+          <option value="room">room</option>
+          <option value="coins">coins</option>
+          <option value="rent_buy">rent_buy</option>
+          <option value="day_rent">rent_day</option>
+    </select><br>
+    <input type="number" name="min" placeholder="Input integer"><br>
+    <input type="number" name="max"><br>
+    <input type="submit">
+    </form>
+</body>
+</html>
